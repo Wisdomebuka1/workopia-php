@@ -19,6 +19,7 @@ function basePath($path = ''):string{
 function loadViews($name):void{
 
   $viewPath = basePath("views/{$name}.views.php");
+ 
 
    if(!file_exists($viewPath)){
      echo "views {$name} not found!";
@@ -54,5 +55,22 @@ function loadPartials($name):void{
 
 
 function inspect($value){
+    echo '<prev>';
+    echo var_dump($value);
+    echo '</prev>';
+}
 
+
+
+/**
+ * inspectAndDie a value(s)
+ * @param mixed $value
+ * @return void
+ */
+
+
+function inspectAndDie($value){
+    echo '<prev>';
+    echo die(var_dump($value));
+    echo '</prev>';
 }
